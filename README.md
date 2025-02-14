@@ -26,7 +26,6 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - TypeScript
 - Vue.js
 - Node.js
-- Express
 
 ---
 

@@ -30,13 +30,14 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-- Esse projeto busca resultados em certos arquivos `.json` no BackEnd.
+- Esse projeto busca certos valores em diferentes arquivos `.json`
 
 ## Inicializar
 
 - Clone o repositório
-- No `multisearch-backend` utilize o comando `npm run dev` para iniciar o servidor
-- Já no `multisearch-frontend` utilize o comando `npm run dev` para iniciar o projeto
+- Baixe as dependencias utilizando `npm i` tanto dentro do [multisearch-backend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-backend) quanto no [multisearch-frontend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-frontend)
+- No [multisearch-backend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-backend) utilize o comando `npm run dev` para iniciar o servidor na Porta 5000
+- Já no [multisearch-frontend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-frontend) utilize o comando `npm run dev` para iniciar o projeto Vue
 
 ---
 

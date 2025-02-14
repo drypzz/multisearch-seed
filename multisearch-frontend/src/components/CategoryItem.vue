@@ -1,4 +1,5 @@
 <template>
+
     <li class="item">
         <div class="item-id">
             <strong>#{{ item.id }}</strong>
@@ -13,6 +14,7 @@
             <span>{{ item.shift }}</span>
         </div>
     </li>
+    
 </template>
 
 <script>

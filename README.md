@@ -13,7 +13,7 @@
     ᲼᲼᲼*v1.8.3 - 2025* (now)
 </details>
 
-- Ultima atualização: 13/02/25 - 22:25
+- Ultima atualização: 14/02/25 - 00:31
 
 <img src="https://github.com/drypzz/multisearch-seed/blob/master/layout/print.png" />
 
@@ -26,6 +26,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - TypeScript
 - Vue.js
 - Node.js
+- Teste E2E (Cypress)
 
 ---
 

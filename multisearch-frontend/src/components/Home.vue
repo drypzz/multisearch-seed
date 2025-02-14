@@ -1,4 +1,5 @@
 <template>
+    
     <div class="search-container">
 
         <div class="logo">
@@ -7,8 +8,8 @@
 
         <div class="search-bar">
             <div class="input-wrapper">
-                <input v-model="query" placeholder="Digite para buscar..." />
-                <button @click="search">🔍</button>
+                <input name="search" v-model="query" placeholder="Digite para buscar..." />
+                <button name="searchBtn" @click="search">🔍</button>
             </div>
         </div>
 
@@ -18,6 +19,7 @@
 
         <CategoryList :categories="allCategories" />
     </div>
+    
 </template>
 
 <script>
@@ -65,11 +67,13 @@
 
                 try {
                     const response = await axios.get(`http://localhost:5000/search?q=${this.query}`); // Faz a requisição para a API
-                    this.results = response.data.results;
+
+                    this.results = Array.isArray(response.data.results) ? response.data.results : []; // Garante que seja um array
                 } catch (error) {
                     console.error("Erro ao buscar:", error);
+                    this.results = []; // Em caso de erro, mantém um array vazio
                 }
-            },
+            }
         },
     };
 </script>

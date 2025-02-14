@@ -1,0 +1,78 @@
+[
+  {
+    "MaterialID": "GVT",
+    "MaterialName": "Gaveta"
+  },
+  {
+    "MaterialID": "MECAJA",
+    "MaterialName": "Mesa com Cadeira Jantar"
+  },
+  {
+    "MaterialID": "ML3X2",
+    "MaterialName": "Mesa Luxo 3m x 2m"
+  },
+  {
+    "MaterialID": "MQ1X1",
+    "MaterialName": "Mesa Quadrada 1m x 1m"
+  },
+  {
+    "MaterialID": "MQ2X2",
+    "MaterialName": "Mesa Quadrada 2m x 2m"
+  },
+  {
+    "MaterialID": "MQ3X3",
+    "MaterialName": "Mesa Quadrada 3m x 3m"
+  },
+  {
+    "MaterialID": "MR1X-5",
+    "MaterialName": "Mesa Retangular 1m x 50cm"
+  },
+  {
+    "MaterialID": "MR2X1",
+    "MaterialName": "Mesa Retangular 2m x 1m"
+  },
+  {
+    "MaterialID": "MR3X1",
+    "MaterialName": "Mesa Retangular 3m x 1m"
+  },
+  {
+    "MaterialID": "MR3X2",
+    "MaterialName": "Mesa Retangular 3m x 2m"
+  },
+  {
+    "MaterialID": "MS2X3",
+    "MaterialName": "Mesa Simples 2m x 3m"
+  },
+  {
+    "MaterialID": "PPM",
+    "MaterialName": "Pé para Mesa"
+  },
+  {
+    "MaterialID": "PRF",
+    "MaterialName": "Parafuso no 8"
+  },
+  {
+    "MaterialID": "PRG",
+    "MaterialName": "Prego 10x10"
+  },
+  {
+    "MaterialID": "PXDGVT",
+    "MaterialName": "Puxador Gaveta"
+  },
+  {
+    "MaterialID": "TMQ",
+    "MaterialName": "Tampo para Mesa Quadrada"
+  },
+  {
+    "MaterialID": "TMR",
+    "MaterialName": "Tampo para Mesa Retangular"
+  },
+  {
+    "MaterialID": "MR4X2",
+    "MaterialName": "Mesa Retangular 4m x 2m"
+  },
+  {
+    "MaterialID": "MR5X2",
+    "MaterialName": "Mesa Retangular 5m x 2m"
+  }
+]

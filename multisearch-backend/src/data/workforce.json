@@ -1,0 +1,117 @@
+[
+  {
+    "WorkforceID": 1,
+    "Name": "Aline Velasques",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 2,
+    "Name": "Danilo Inês",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 3,
+    "Name": "Dina Granjeiro",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 4,
+    "Name": "Débora Pinhal",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 5,
+    "Name": "Eurico Moita",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 6,
+    "Name": "Humberto Braz",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 7,
+    "Name": "Iara Parracho",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 8,
+    "Name": "Jacir Piteira",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 9,
+    "Name": "Ludovico Pino",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 10,
+    "Name": "Mamede Quintero",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 11,
+    "Name": "Matias Pedroso",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 12,
+    "Name": "Micael Díaz",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 13,
+    "Name": "Milena Vargas",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 14,
+    "Name": "Olivia Avelar",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 15,
+    "Name": "Paulo Brito",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 16,
+    "Name": "Poliana Camargo",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 17,
+    "Name": "Sofia Salles",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 18,
+    "Name": "Teodorico Cipriano",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 19,
+    "Name": "Tiago Alancastre",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 20,
+    "Name": "Violeta Quintal",
+    "Shift": "Turno B"
+  },
+  {
+    "WorkforceID": 21,
+    "Name": "Vivaldo Sucupira",
+    "Shift": "Turno C"
+  },
+  {
+    "WorkforceID": 22,
+    "Name": "Zacarias Queirós",
+    "Shift": "Turno A"
+  },
+  {
+    "WorkforceID": 23,
+    "Name": "Tânia Sousa",
+    "Shift": "Turno B"
+  }
+]

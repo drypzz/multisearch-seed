@@ -1,0 +1,34 @@
+[
+  {
+    "EquipmentID": "CMRP1",
+    "EquipmentName": "Cortador Tampo Mesa Retangular Pequeno"
+  },
+  {
+    "EquipmentID": "CMRG1",
+    "EquipmentName": "Cortador Tampo Mesa Retangular Grande"
+  },
+  {
+    "EquipmentID": "CTMQ1",
+    "EquipmentName": "Cortador Tampo Mesa Quadrada"
+  },
+  {
+    "EquipmentID": "PFSD1",
+    "EquipmentName": "Parafusador"
+  },
+  {
+    "EquipmentID": "MTLH1",
+    "EquipmentName": "Martelo Hidráulico"
+  },
+  {
+    "EquipmentID": "MRTB1",
+    "EquipmentName": "Marreta Biônica"
+  },
+  {
+    "EquipmentID": "PFSD2",
+    "EquipmentName": "Parafusador 2"
+  },
+  {
+    "EquipmentID": "MDG1",
+    "EquipmentName": "Montador de Gavetas"
+  }
+]

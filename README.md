@@ -30,7 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-- Esse projeto busca resutados em certos arquivos `.json` no BackEnd.
+- Esse projeto busca resultados em certos arquivos `.json` no BackEnd.
 
 ## Inicializar
 

@@ -10,7 +10,7 @@
     <br />
     ᲼᲼᲼᲼v1.1.5 - 2025 (13/02)
     <br />
-    ᲼᲼᲼*v1.8.3 - 2025* (now)
+    ᲼᲼᲼*v1.9.2 - 2025* (now)
 </details>
 
 - Ultima atualização: 14/02/25 - 00:31
@@ -34,7 +34,13 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - Esse projeto busca certos valores em diferentes arquivos `.json`
 
-## Inicializar
+## 🧪 E2E
+
+- Primeiro rode tanto o [multisearch-backend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-backend) quanto o [multisearch-frontend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-frontend).
+- Depois abra a pasta `test` no terminal e execute `npm i`.
+- Para rodar o teste utilize `npx cypress run` e pronto.
+
+## 🌱 Inicializar
 
 - Clone o repositório
 - Baixe as dependencias utilizando `npm i` tanto dentro do [multisearch-backend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-backend) quanto no [multisearch-frontend](https://github.com/drypzz/multisearch-seed/tree/master/multisearch-frontend)

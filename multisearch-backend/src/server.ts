@@ -1,76 +1,79 @@
 import express, { Request, Response } from "express";
-
 import cors from "cors";
-import fs from "fs";
-import path from "path";
 
+import { loadJSON, normalizeData } from "./server.utils";
 import Item from "./server.props";
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 
-const PORT = 5000;
+const PORT = 5000; // Porta do servidor
 
-const dataDir = path.join(__dirname, "data"); // Caminho para a pasta de dados
+// Carregar dados dinamicamente
+const categories = [
+    { 
+        file: "sales_orders.json",
+        id: "SalesOrderID",
+        name: "MaterialName",
+        category: "Pedidos de Venda",
+        extra: (item: any) => ({
+            quantity: item.Quantity || "",
+        })
+    },
 
-const loadJSON = (filename: string): any[] => { // Função para carregar arquivos JSON
-    try {
-        const filePath = path.join(dataDir, filename);
-        return JSON.parse(fs.readFileSync(filePath, "utf-8"));
-    } catch (error) {
-        console.error(`Erro ao carregar ${filename}:`, error);
-        return [];
-    }
-};
+    { 
+        file: "purchase_orders.json",
+        id: "PurchaseOrderID",
+        name: "MaterialName",
+        category: "Pedidos de Compra",
+        extra: (item: any) => ({
+            quantity: item.Quantity || "",
+        })
+    },
 
-// Função para normalizar os dados
-const normalizeData = (data: any[], idKey: string, nameKey: string, category: string, extraFields?: (item: any) => Partial<Item>): Item[] => {
-    return data.map((item) => ({
-        id: item[idKey],
-        name: item[nameKey] || "",
-        quantity: item.Quantity || item.QuantityOrdered || item.QuantityDelivered,
-        category,
-        ...(extraFields ? extraFields(item) : {})
-    })).filter((item) => item.name.trim() !== "");
-};
+    {
+        file: "workforce.json",
+        id: "WorkforceID",
+        name: "Name",
+        category: "Mão de Obra",
+        extra: (item: any) => ({
+            shift: item.Shift || ""
+        })
+    },
+    
+    {
+        file: "materials.json",
+        id: "MaterialID",
+        name: "MaterialName",
+        category: "Produtos"
+    },
 
-const pedidosVenda: Item[] = normalizeData(loadJSON("sales_orders.json"), "SalesOrderID", "MaterialName", "Pedidos de Venda",
-    (item) => ({
-        quantity: item.Quantity || ""
-    })
+    {
+        file: "equipments.json",
+        id: "EquipmentID",
+        name: "EquipmentName",
+        category: "Equipamentos"
+    },
+];
+
+// Normalizar todos os dados de uma vez
+const dataStore: Item[] = categories.flatMap(({ file, id, name, category, extra }) => 
+    normalizeData(loadJSON(file), id, name, category, extra)
 );
-
-const pedidosCompra: Item[] = normalizeData(loadJSON("purchase_orders.json"), "PurchaseOrderID", "MaterialName", "Pedidos de Compra",
-    (item) => ({
-        quantity: item.Quantity || ""
-    })
-);
-
-const maoDeObra: Item[] = normalizeData(loadJSON("workforce.json"), "WorkforceID", "Name", "Mão de Obra",
-    (item) => ({
-        shift: item.Shift || ""
-    })
-);
-
-const produtos: Item[] = normalizeData(loadJSON("materials.json"), "MaterialID", "MaterialName", "Produtos");
-const equipamentos: Item[] = normalizeData(loadJSON("equipments.json"), "EquipmentID", "EquipmentName", "Equipamentos");
 
 app.get("/search", (req: Request, res: Response) => {
     const query = (req.query.q as string)?.toLowerCase().trim();
 
-    const filterItems = (items: Item[]): Item[] => items.filter((item) => // Filtrar itens
-        item.name.toLowerCase().includes(query) || (item.shift && item.shift.toLowerCase().includes(query) || (item.category && item.category.toLowerCase().includes(query)))
+    // Filtrar por nome, categoria, turno e quantidade
+    const results = dataStore.filter(({ name, shift, category, quantity }) =>
+        name.toLowerCase().includes(query) ||
+        category.toLowerCase().includes(query) ||
+        shift?.toLowerCase().includes(query) ||
+        quantity?.toString().includes(query)
     );
-
-    const results: Item[] = [ // Resultados
-        ...filterItems(pedidosVenda),
-        ...filterItems(pedidosCompra),
-        ...filterItems(produtos),
-        ...filterItems(equipamentos),
-        ...filterItems(maoDeObra),
-    ];
 
     res.json({ results });
 });
 
-app.listen(PORT, () => console.log(`🚀 Servidor rodando na porta ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Servidor rodando em http://localhost:${PORT}`));

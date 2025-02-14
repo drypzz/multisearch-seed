@@ -14,10 +14,19 @@
         </div>
 
         <div class="results">
-            <h3 v-if="results.length">Foram encontrados {{ results.length }} resultados:</h3>
+            <h3 v-if="results.length && !isLoading">Foram encontrados {{ results.length }} resultados:</h3>
         </div>
 
-        <CategoryList :categories="allCategories" />
+        <div v-if="isLoading" class="loading-container">
+            <svg viewBox="25 25 50 50">
+                <circle r="20" cy="50" cx="50"></circle>
+            </svg>
+        </div>
+
+        <div v-else class="category-container">
+            <CategoryList :categories="allCategories" />
+        </div>
+        
     </div>
     
 </template>
@@ -32,6 +41,7 @@
             return { // Retorna os dados
                 query: "", // Query de busca
                 results: [], // Resultados da busca
+                isLoading: false, // Indica se está carregando
                 categories: [ // Categorias e suas ordem de exibição
                     "Pedidos de Venda",
                     "Pedidos de Compra",
@@ -65,14 +75,20 @@
             async search() {
                 if (this.query.trim() === "") return; // Se a query estiver vazia, retorna
 
+                this.isLoading = true; // Indica que está carregando
+                this.results = []; // Limpa os resultados anteriores
+
                 try {
                     const response = await axios.get(`http://localhost:5000/search?q=${this.query}`); // Faz a requisição para a API
-
+                    
                     this.results = Array.isArray(response.data.results) ? response.data.results : []; // Garante que seja um array
+
+                    setTimeout(() => this.isLoading = false, 2000); // Simula um delay de 2 segundo
                 } catch (error) {
                     console.error("Erro ao buscar:", error);
+                    this.isLoading = false; // Indica que parou de carregar
                     this.results = []; // Em caso de erro, mantém um array vazio
-                }
+                };
             }
         },
     };
@@ -81,6 +97,7 @@
 <style>
     .search-container {
         max-width: 600px;
+        width: 100%;
         margin: 0 auto;
         padding: 20px;
         font-family: Arial, sans-serif;
@@ -121,7 +138,7 @@
     }
 
     .input-wrapper button {
-        background-color: #d7d7d7;
+        background-color: transparent;
         color: white;
         border: 1px solid #ccc;
         padding: 12px 15px;
@@ -134,12 +151,21 @@
     }
 
     /* Categorias */
+
+    .category-container{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+    }
+
     .category {
-        width: 500px;
+        width: 100%;
         border: 1px solid #ccc;
         margin-top: 15px;
         height: 120px;
-        /* border-radius: 10px; */
+        border-radius: 10px;
         background: #f9f9f9;
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     }
@@ -159,7 +185,7 @@
 
     strong {
         text-decoration: underline;
-        color: red;
+        color: #c82020;
     }
 
     /* Lista de itens */
@@ -216,6 +242,53 @@
         color: #888;
         font-style: italic;
         text-align: center;
+    }
+
+    /* Loading */
+
+    .loading-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .loading-container svg {
+        width: 3.25em;
+        transform-origin: center;
+        animation: rotate4 2s linear infinite;
+    }
+
+    .loading-container svg circle {
+        fill: none;
+        stroke: #c82020;
+        stroke-width: 2;
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+        stroke-linecap: round;
+        animation: dash4 1.5s ease-in-out infinite;
+    }
+
+    @keyframes rotate4 {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes dash4 {
+        0% {
+            stroke-dasharray: 1, 200;
+            stroke-dashoffset: 0;
+        }
+
+        50% {
+            stroke-dasharray: 90, 200;
+            stroke-dashoffset: -35px;
+        }
+
+        100% {
+            stroke-dashoffset: -125px;
+        }
     }
 
     /* Responsividade */

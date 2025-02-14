@@ -2,18 +2,9 @@
 
 ## 📰 Informações
 
-<details>
-  <summary>
-      Versões:
-  </summary>
-    ᲼᲼᲼᲼v1.0.0 - 2025 (13/02)
-    <br />
-    ᲼᲼᲼᲼v1.1.5 - 2025 (13/02)
-    <br />
-    ᲼᲼᲼*v1.9.2 - 2025* (now)
-</details>
 
-- Ultima atualização: 14/02/25 - 00:31
+- Versao: 1.10.7
+- Ultima atualização: 14/02/25 - 15:53
 
 <img src="https://github.com/drypzz/multisearch-seed/blob/master/layout/print.png" />
 

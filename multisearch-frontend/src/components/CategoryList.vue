@@ -7,7 +7,7 @@
                 <h4>{{ category }}</h4>
             </div>
             <div>
-                <span>({{ e.length || 0 }} itens encontrados)</span>
+                <span>({{ e.length || "nenhum" }} itens encontrados)</span>
             </div>
         </div>
 

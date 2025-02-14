@@ -15,6 +15,8 @@
 
 - Ultima atualização: 13/02/25 - 22:25
 
+<img src="https://github.com/drypzz/multisearch-seed/blob/master/layout/print.png" />
+
 ---
 
 ## 🚀 Tecnologias
